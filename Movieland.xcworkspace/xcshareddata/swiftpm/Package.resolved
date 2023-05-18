@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/f-max/Eustace",
       "state" : {
-        "revision" : "c39269669da34cdddf50224e5d239be018fd656b",
-        "version" : "1.0.1"
+        "revision" : "4420ce408cfda5689ea20ed39da32de9f27b6662",
+        "version" : "1.0.2"
       }
     }
   ],
