@@ -1,14 +1,13 @@
 //
-//  Movieland_AppTests.swift
-//  Movieland-AppTests
+//  Movieland_App_Integration_Tests.swift
+//  Movieland-App-Integration-Tests
 //
 //  Created by Massimiliano Faustini on 18/05/23.
 //
 
 import XCTest
-@testable import Movieland_App
 
-final class Movieland_AppTests: XCTestCase {
+final class Movieland_App_Integration_Tests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,7 +27,7 @@ final class Movieland_AppTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
