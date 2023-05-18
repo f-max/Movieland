@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Eustace_inPackage
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -30,4 +31,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

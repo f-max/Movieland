@@ -16,6 +16,7 @@
 		B4C415032A16129900FCD50C /* Movieland_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C415022A16129900FCD50C /* Movieland_AppUITestsLaunchTests.swift */; };
 		B4C4152E2A161A8D00FCD50C /* Movieland_App_Unit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C4152D2A161A8D00FCD50C /* Movieland_App_Unit_Tests.swift */; };
 		B4C4153B2A161AEE00FCD50C /* Movieland_App_Integration_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C4153A2A161AEE00FCD50C /* Movieland_App_Integration_Tests.swift */; };
+		B4C415512A162F4100FCD50C /* Eustace-inPackage in Frameworks */ = {isa = PBXBuildFile; productRef = B4C415502A162F4100FCD50C /* Eustace-inPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C415512A162F4100FCD50C /* Eustace-inPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +169,9 @@
 			dependencies = (
 			);
 			name = "Movieland-App";
+			packageProductDependencies = (
+				B4C415502A162F4100FCD50C /* Eustace-inPackage */,
+			);
 			productName = "Movieland-App";
 			productReference = B4C414DC2A16129800FCD50C /* Movieland-App.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +264,9 @@
 				Base,
 			);
 			mainGroup = B4C414D32A16129800FCD50C;
+			packageReferences = (
+				B4C4154F2A162F4100FCD50C /* XCRemoteSwiftPackageReference "Eustace" */,
+			);
 			productRefGroup = B4C414DD2A16129800FCD50C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -707,6 +715,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4C4154F2A162F4100FCD50C /* XCRemoteSwiftPackageReference "Eustace" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/f-max/Eustace";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4C415502A162F4100FCD50C /* Eustace-inPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4C4154F2A162F4100FCD50C /* XCRemoteSwiftPackageReference "Eustace" */;
+			productName = "Eustace-inPackage";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4C414D42A16129800FCD50C /* Project object */;
 }

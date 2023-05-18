@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "eustace",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/f-max/Eustace",
+      "state" : {
+        "revision" : "c39269669da34cdddf50224e5d239be018fd656b",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
