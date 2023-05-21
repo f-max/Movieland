@@ -12,6 +12,7 @@ import Movieland_Model
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
+  var searchMovieCoordinator: (any SearchMovieCoordinating)?
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     
@@ -19,11 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     diContainer.initialise()
     
-    window = UIWindow(windowScene: windowScene)
-    window?.rootViewController = ViewController()
-    window?.rootViewController?.view.backgroundColor = .lightGray
-
-    window?.makeKeyAndVisible()
+    searchMovieCoordinator = try? diContainer.resolve(serviceType: (any SearchMovieCoordinating).self)
+    guard let searchMovieCoordinator = searchMovieCoordinator else {
+      return
+    }
+    
+    let windowForScene = UIWindow(windowScene: windowScene)
+    window = windowForScene
+    searchMovieCoordinator.setRootViewController(window: windowForScene)
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {}
@@ -33,18 +37,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func sceneDidEnterBackground(_ scene: UIScene) {}
   
 }
-
-/*
- if let service = try? diContainer.resolve(serviceType: BEServiceProviding.self) {
-   Task {
-     let result = await service.fetchMovieList(searchExpression: "ghost")
-     switch result {
-     case let .failure(error):
-       print(error.displayableMessage)
-     case let .success(movies): // turn into futures?
-       //fetchRatingsForMovies(movies: [Movies])
-       break
-     }
-   }
- }
- */

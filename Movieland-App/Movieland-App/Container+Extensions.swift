@@ -24,7 +24,9 @@ extension Eustace_inPackage.Container {
 
 private extension Eustace_inPackage.Container {
   func initialiseCommon() {
-    
+    register(serviceType: (any SearchMovieCoordinating).self) {
+      SearchMovieCoordinator()
+    }
   }
 }
 
@@ -32,9 +34,15 @@ private extension Eustace_inPackage.Container {
 
 private extension Eustace_inPackage.Container {
   func initialiseAsPerBuildConfiguration() {
+    
     register(serviceType: BEServiceProviding.self) {
       BEServiceProviderMock()
     }
+    
+    register(serviceType: SearchMovieServicing.self) {
+      BEServiceProviderMock()
+    }
+    
   }
 }
 
@@ -42,6 +50,7 @@ private extension Eustace_inPackage.Container {
 
 private extension Eustace_inPackage.Container {
   func initialiseAsPerBuildConfiguration() {
+    
     register(serviceType: BaseURLProviding.self) {
       BaseURLProvider()
     }
@@ -73,6 +82,11 @@ private extension Eustace_inPackage.Container {
       }
       return BEServiceProvider(urlBuilder: urlBuilder)
     }
+    
+    register(serviceType: SearchMovieServicing.self) {
+      BEServiceProvider()
+    }
+    
   }
 }
 
