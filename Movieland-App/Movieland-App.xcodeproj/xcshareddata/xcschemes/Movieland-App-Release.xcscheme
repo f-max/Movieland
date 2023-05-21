@@ -28,28 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B4C4152A2A161A8D00FCD50C"
-               BuildableName = "Movieland-App-Unit-Tests.xctest"
-               BlueprintName = "Movieland-App-Unit-Tests"
-               ReferencedContainer = "container:Movieland-App.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B4C415372A161AEE00FCD50C"
-               BuildableName = "Movieland-App-Integration-Tests.xctest"
-               BlueprintName = "Movieland-App-Integration-Tests"
-               ReferencedContainer = "container:Movieland-App.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

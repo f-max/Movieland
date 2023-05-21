@@ -46,7 +46,7 @@ private extension Eustace_inPackage.Container {
   }
 }
 
-#else
+#elseif RELEASE
 
 private extension Eustace_inPackage.Container {
   func initialiseAsPerBuildConfiguration() {
@@ -83,11 +83,23 @@ private extension Eustace_inPackage.Container {
       return BEServiceProvider(urlBuilder: urlBuilder)
     }
     
-    register(serviceType: SearchMovieServicing.self) {
-      BEServiceProvider()
+    register(serviceType: SearchMovieServicing.self) { [weak self] in
+      guard let urlBuilder = try? self?.resolve(serviceType: URLBuilding.self) else {
+        return nil
+      }
+      return BEServiceProvider(urlBuilder: urlBuilder)
     }
     
   }
 }
+
+#elseif UNIT_TESTS
+
+private extension Eustace_inPackage.Container {
+  func initialiseAsPerBuildConfiguration() {
+  }
+}
+
+#else
 
 #endif
