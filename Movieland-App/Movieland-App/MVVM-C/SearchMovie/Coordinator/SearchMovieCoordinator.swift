@@ -12,7 +12,6 @@ final class SearchMovieCoordinator: SearchMovieCoordinating {
   func setRootViewController(window: UIWindow) {
     Task { @MainActor in
       window.rootViewController = await serchViewController()
-      window.rootViewController?.view.backgroundColor = .lightGray
       window.makeKeyAndVisible()
     }
   }

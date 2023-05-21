@@ -10,6 +10,7 @@ import Foundation
 public enum BEServiceError: Error {
   case emailNotConfirmed
   case listIsEmpty
+  case maximumUsage
   case serverBusy
   case suspendedAccount
   case unableToBuildValidURL

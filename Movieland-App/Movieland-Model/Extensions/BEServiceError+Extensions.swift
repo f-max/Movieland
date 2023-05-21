@@ -20,6 +20,8 @@ public extension BEServiceError {
       return "We are experiencing high traffic volumes. Please retry later ⏰"
     case .listIsEmpty:
       return "Uhm... looks like there is nothing like that around... 🌵"
+    case .maximumUsage:
+      return "Maximum usage per day ecceeded ⚖️"
     }
   }
 }

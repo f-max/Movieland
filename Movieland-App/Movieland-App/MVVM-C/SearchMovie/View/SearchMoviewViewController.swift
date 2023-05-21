@@ -25,7 +25,7 @@ class SearchMoviewViewController<ViewModel: SearchMovieViewModeling & Observable
   override func viewDidLoad() {
     super.viewDidLoad()
     //self.navigationItem.title = viewModel.titleCopy
-    embedSwiftUI(view_: SearchMoviewView(viewModel: viewModel))
+    embedSwiftUI(view_: SearchMovieView(viewModel: viewModel))
   }
   
   

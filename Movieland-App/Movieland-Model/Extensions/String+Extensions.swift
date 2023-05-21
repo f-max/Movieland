@@ -11,6 +11,10 @@ import Foundation
 // We are intercepting the error message, mapping it to a list of possible cases, each of them with a displayable message, which in turn can be localised in the bundle.
 public extension String {
   var beServiceError: BEServiceError {
+    guard  !self.hasPrefix("Maximum usage") else {
+      return .maximumUsage
+    }
+    
     switch self {
     case "Email not confirmed":
       return .emailNotConfirmed

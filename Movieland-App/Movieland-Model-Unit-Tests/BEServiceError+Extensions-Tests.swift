@@ -48,4 +48,9 @@ final class BEServiceError_Extensions_Tests: XCTestCase {
     XCTAssertEqual(sut.displayableMessage, "An error has occurred, please retry later. 🙄")
   }
   
+  func test_GivenSutIsMaximumExceeded_ThenDisplayableMessageIsAsExpexted() throws {
+    sut = .maximumUsage
+    XCTAssertEqual(sut.displayableMessage, "Maximum usage per day ecceeded ⚖️")
+  }
+  
 }

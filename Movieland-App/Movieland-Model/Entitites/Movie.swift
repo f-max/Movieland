@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Movie: Codable, Equatable  {
-  var id: String
-  var image: String
-  var title: String
+  public var id: String
+  public var image: String
+  public var title: String
   
   public  init(id: String, image: String, title: String) {
     self.id = id

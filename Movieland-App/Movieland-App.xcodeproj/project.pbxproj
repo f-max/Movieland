@@ -69,7 +69,7 @@
 		B4C416292A1A2BBF00FCD50C /* SearchMovieModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C416282A1A2BBF00FCD50C /* SearchMovieModeling.swift */; };
 		B4C4162B2A1A2BCC00FCD50C /* SearchMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C4162A2A1A2BCC00FCD50C /* SearchMovieModel.swift */; };
 		B4C4162D2A1A2C0900FCD50C /* SearchMoviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C4162C2A1A2C0900FCD50C /* SearchMoviewViewController.swift */; };
-		B4C4162F2A1A2C1D00FCD50C /* SearchMoviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C4162E2A1A2C1D00FCD50C /* SearchMoviewView.swift */; };
+		B4C4162F2A1A2C1D00FCD50C /* SearchMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C4162E2A1A2C1D00FCD50C /* SearchMovieView.swift */; };
 		B4C416312A1A2C4000FCD50C /* SearchMovieViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C416302A1A2C4000FCD50C /* SearchMovieViewModeling.swift */; };
 		B4C416332A1A2C5200FCD50C /* SearchMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C416322A1A2C5200FCD50C /* SearchMovieViewModel.swift */; };
 		B4C416352A1A2C6C00FCD50C /* SearchMovieCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C416342A1A2C6C00FCD50C /* SearchMovieCoordinating.swift */; };
@@ -78,6 +78,7 @@
 		B4C4163C2A1A32E000FCD50C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C4163B2A1A32DF00FCD50C /* UIViewController+Extensions.swift */; };
 		B4C4163F2A1A358100FCD50C /* Navigating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C4163E2A1A358100FCD50C /* Navigating.swift */; };
 		B4C416412A1A35BC00FCD50C /* RootNavigating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C416402A1A35BC00FCD50C /* RootNavigating.swift */; };
+		B4F133112A1AB9B000A2142A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B4F133102A1AB9B000A2142A /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,7 +209,7 @@
 		B4C416282A1A2BBF00FCD50C /* SearchMovieModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieModeling.swift; sourceTree = "<group>"; };
 		B4C4162A2A1A2BCC00FCD50C /* SearchMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieModel.swift; sourceTree = "<group>"; };
 		B4C4162C2A1A2C0900FCD50C /* SearchMoviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviewViewController.swift; sourceTree = "<group>"; };
-		B4C4162E2A1A2C1D00FCD50C /* SearchMoviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviewView.swift; sourceTree = "<group>"; };
+		B4C4162E2A1A2C1D00FCD50C /* SearchMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieView.swift; sourceTree = "<group>"; };
 		B4C416302A1A2C4000FCD50C /* SearchMovieViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModeling.swift; sourceTree = "<group>"; };
 		B4C416322A1A2C5200FCD50C /* SearchMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModel.swift; sourceTree = "<group>"; };
 		B4C416342A1A2C6C00FCD50C /* SearchMovieCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieCoordinating.swift; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F133112A1AB9B000A2142A /* Kingfisher in Frameworks */,
 				B4C415F22A191C5A00FCD50C /* Eustace-inPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,7 +534,7 @@
 		B4C416252A1A2B5200FCD50C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B4C4162E2A1A2C1D00FCD50C /* SearchMoviewView.swift */,
+				B4C4162E2A1A2C1D00FCD50C /* SearchMovieView.swift */,
 				B4C4162C2A1A2C0900FCD50C /* SearchMoviewViewController.swift */,
 			);
 			path = View;
@@ -640,6 +642,7 @@
 			name = "Movieland-App";
 			packageProductDependencies = (
 				B4C415F12A191C5A00FCD50C /* Eustace-inPackage */,
+				B4F133102A1AB9B000A2142A /* Kingfisher */,
 			);
 			productName = "Movieland-App";
 			productReference = B4C414DC2A16129800FCD50C /* Movieland-App.app */;
@@ -804,6 +807,7 @@
 			mainGroup = B4C414D32A16129800FCD50C;
 			packageReferences = (
 				B4C415F02A191C5A00FCD50C /* XCRemoteSwiftPackageReference "Eustace" */,
+				B4F1330F2A1AB9B000A2142A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = B4C414DD2A16129800FCD50C /* Products */;
 			projectDirPath = "";
@@ -907,7 +911,7 @@
 			files = (
 				B4C4162B2A1A2BCC00FCD50C /* SearchMovieModel.swift in Sources */,
 				B4C4163F2A1A358100FCD50C /* Navigating.swift in Sources */,
-				B4C4162F2A1A2C1D00FCD50C /* SearchMoviewView.swift in Sources */,
+				B4C4162F2A1A2C1D00FCD50C /* SearchMovieView.swift in Sources */,
 				B4C4163C2A1A32E000FCD50C /* UIViewController+Extensions.swift in Sources */,
 				B4C414E02A16129800FCD50C /* AppDelegate.swift in Sources */,
 				B4C415B22A18DAF100FCD50C /* Container+Extensions.swift in Sources */,
@@ -2042,6 +2046,14 @@
 				version = 1.0.2;
 			};
 		};
+		B4F1330F2A1AB9B000A2142A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2049,6 +2061,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B4C415F02A191C5A00FCD50C /* XCRemoteSwiftPackageReference "Eustace" */;
 			productName = "Eustace-inPackage";
+		};
+		B4F133102A1AB9B000A2142A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4F1330F2A1AB9B000A2142A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

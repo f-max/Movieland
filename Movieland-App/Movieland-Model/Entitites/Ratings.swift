@@ -7,12 +7,12 @@
 
 import Foundation
 
-public struct Ratings: Codable {
-  let imDb: String
-  let metacritic: String
-  let theMovieDb: String
-  let rottenTomatoes: String
-  let filmAffinity: String
+public struct Ratings: Codable, Equatable {
+  public let imDb: String
+  public let metacritic: String
+  public let theMovieDb: String
+  public let rottenTomatoes: String
+  public let filmAffinity: String
   
   public init(imDb: String, metacritic: String, theMovieDb: String, rottenTomatoes: String, filmAffinity: String) {
     self.imDb = imDb

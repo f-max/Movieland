@@ -36,11 +36,26 @@ private extension Eustace_inPackage.Container {
   func initialiseAsPerBuildConfiguration() {
     
     register(serviceType: BEServiceProviding.self) {
-      BEServiceProviderMock()
+      let service = BEServiceProviderMock()
+      service.delayInSeconds = 3
+      service.fetchMovieListValueToReturn = .failure(.emailNotConfirmed)
+      return service
     }
     
     register(serviceType: SearchMovieServicing.self) {
-      BEServiceProviderMock()
+      let service = BEServiceProviderMock()
+      service.delayInSeconds = 3
+      
+      // Choose which one to uncomment
+      
+      //service.fetchMovieListValueToReturn = .failure(.suspendedAccount)
+      //service.fetchMovieListValueToReturn = .success([])
+      
+      let movie_0: Movie = .init(id: "someId0", image: "someImage", title: "Some title 0 ")
+      let movie_1: Movie = .init(id: "someId1", image: "someImage", title: "Some title 1")
+      service.fetchMovieListValueToReturn = .success([movie_0, movie_1])
+      
+      return service
     }
     
   }
