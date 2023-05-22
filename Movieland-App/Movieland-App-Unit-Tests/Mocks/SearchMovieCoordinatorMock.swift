@@ -23,4 +23,8 @@ final class SearchMovieCoordinatorMock: SearchMovieCoordinating {
   func didSelectMovie(movieWithRatings: MovieWithRatings) {
     didSelectMovieCalls.append(movieWithRatings)
   }
+  
+  func dismissDetail() {
+    
+  }
 }
