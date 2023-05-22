@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct MoviewWithRatings: Codable, Equatable {
+public struct MovieWithRatings: Codable, Equatable {
   public let movie: Movie
   public var ratings: Ratings?
   

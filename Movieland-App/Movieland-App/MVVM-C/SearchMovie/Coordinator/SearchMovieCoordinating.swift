@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import Movieland_Model
 
 enum SerchMovieLocations: Location {
   case list
-  case detail(id: String)
+  case detail(movieWithRatings: MovieWithRatings)
 }
 
-protocol SearchMovieCoordinating: RootNavigating {}
+protocol SearchMovieCoordinating: RootNavigating  {
+  func didSelectMovie(movieWithRatings: MovieWithRatings)
+  func dismissDetail()
+}

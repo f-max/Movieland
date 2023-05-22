@@ -117,6 +117,12 @@ private extension SearchMovieView {
         LazyVStack {
           ForEach(viewModel.movies, id: \.movie.id) { entity in
             MoviewRow(movieWithRatings: entity)
+              .contentShape(Rectangle())
+              .onTapGesture {
+                Task {
+                  await viewModel.didSelectMovie(movieWithRatings: entity)
+                }
+              }
           }
         }
       }
@@ -125,7 +131,7 @@ private extension SearchMovieView {
 }
 
 struct MoviewRow: View {
-  var movieWithRatings: MoviewWithRatings
+  var movieWithRatings: MovieWithRatings
   var body: some View {
     VStack(alignment: .leading) {
       HStack(alignment: .top) {
@@ -199,13 +205,3 @@ private extension SearchMovieView {
     }
   }
 }
-
-
-
-
-
-//struct SearchMoviewView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    SearchMoviewView()
-//  }
-//}

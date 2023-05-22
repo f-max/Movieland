@@ -9,16 +9,16 @@ import Foundation
 import Movieland_Model
 
 @MainActor
-final class SearchMovieViewModel: SearchMovieViewModeling & ObservableObject {
+final class SearchMovieViewModel: SearchMovieViewModeling & ObservableObject {  
   
   @Published var errorMessage: String = ""
   @Published var hasLoadedOnce: Bool = false
   @Published var loading: Bool = false
-  @Published var movies: [MoviewWithRatings] = []
+  @Published var movies: [MovieWithRatings] = []
   @Published var noResultsCopy: String = "No results 🤷🏻‍♂️"
   @Published var searchExpression: String = ""
   @Published var searchingCopy: String = "Searching... 👀"
-  
+  @Published var titleCopy: String = "Search Movies"
   
   let model: SearchMovieModeling
   let coordinator: any SearchMovieCoordinating
@@ -38,7 +38,7 @@ final class SearchMovieViewModel: SearchMovieViewModeling & ObservableObject {
       hasLoadedOnce = false
     case let .success(movies):
       self.movies = movies.map {
-        MoviewWithRatings(movie: $0, ratings: nil)
+        MovieWithRatings(movie: $0, ratings: nil)
       }
       loadRatings()
     }
@@ -53,6 +53,10 @@ final class SearchMovieViewModel: SearchMovieViewModeling & ObservableObject {
     self.searchExpression = searchExpression
     movies.removeAll()
     hasLoadedOnce = false
+  }
+  
+  func didSelectMovie(movieWithRatings: MovieWithRatings) async {
+    coordinator.didSelectMovie(movieWithRatings: movieWithRatings)
   }
 }
 
@@ -72,7 +76,7 @@ private extension SearchMovieViewModel {
   }
 }
 
-extension MoviewWithRatings {
+extension MovieWithRatings {
   mutating func updateWithRatings(ratings: Ratings) -> Self {
     .init(movie: self.movie, ratings: ratings)
   }

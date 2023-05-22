@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class SearchMoviewViewController<ViewModel: SearchMovieViewModeling & ObservableObject>: UIViewController {
+class SearchMovieViewController<ViewModel: SearchMovieViewModeling & ObservableObject>: UIViewController {
   
   @ObservedObject private var viewModel: ViewModel
   
@@ -24,7 +24,7 @@ class SearchMoviewViewController<ViewModel: SearchMovieViewModeling & Observable
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    //self.navigationItem.title = viewModel.titleCopy
+    self.navigationItem.title = viewModel.titleCopy
     embedSwiftUI(view_: SearchMovieView(viewModel: viewModel))
   }
   

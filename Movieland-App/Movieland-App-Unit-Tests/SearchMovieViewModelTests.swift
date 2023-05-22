@@ -16,7 +16,7 @@ final class SearchMovieViewModelTests: XCTestCase {
   var sut: SearchMovieViewModel!
   var serviceMock: BEServiceProviderMock!
   var modelMock: SearchMovieModelMock!
-  var coordinatorMock: SearchMoviewCoordinatorMock!
+  var coordinatorMock: SearchMovieCoordinatorMock!
   
   @MainActor
   override func setUpWithError() throws {
@@ -36,6 +36,10 @@ final class SearchMovieViewModelTests: XCTestCase {
   
   func test_GivenAnySut_ThenNoResultsCopyIsAsExpected() {
     XCTAssertEqual(sut.noResultsCopy, "No results 🤷🏻‍♂️")
+  }
+  
+  func test_GivenAnySut_ThentitleCopyIsAsExpected() {
+    XCTAssertEqual(sut.titleCopy, "Search Movies")
   }
   
   func test_GivenSearchExpressionIsEmpty_WhenUserPerformsSearchAction_ThenServiceIsInvokedWithEmptyQuery() async throws {
@@ -80,8 +84,8 @@ final class SearchMovieViewModelTests: XCTestCase {
     let movie_0: Movie = .init(id: "someId", image: "someImage", title: "someTitle")
     let movie_1: Movie = .init(id: "someOtherId", image: "someOtherImage", title: "someOtherTitle")
     
-    let movieWithRatings_0: MoviewWithRatings = .init(movie: movie_0, ratings: nil)
-    let movieWithRatings_1: MoviewWithRatings = .init(movie: movie_1, ratings: nil)
+    let movieWithRatings_0: MovieWithRatings = .init(movie: movie_0, ratings: nil)
+    let movieWithRatings_1: MovieWithRatings = .init(movie: movie_1, ratings: nil)
     
     serviceMock.fetchMovieListValueToReturn = .success([movie_0, movie_1])
     await sut.didPerformSearchAction()
@@ -92,14 +96,22 @@ final class SearchMovieViewModelTests: XCTestCase {
     let movie_0: Movie = .init(id: "someId", image: "someImage", title: "someTitle")
     let movie_1: Movie = .init(id: "someOtherId", image: "someOtherImage", title: "someOtherTitle")
     
-    let movieWithRatings_0: MoviewWithRatings = .init(movie: movie_0, ratings: nil)
-    let movieWithRatings_1: MoviewWithRatings = .init(movie: movie_1, ratings: nil)
+    let movieWithRatings_0: MovieWithRatings = .init(movie: movie_0, ratings: nil)
+    let movieWithRatings_1: MovieWithRatings = .init(movie: movie_1, ratings: nil)
     
     sut.searchExpression = "some expression"
     sut.movies = [movieWithRatings_0, movieWithRatings_1]
     await sut.didUpdate(searchExpression: "some expressio")
     
     XCTAssertEqual(sut.movies, [])
+  }
+  
+  func test_GivenSutReceivesDidSelectAction_ThenSutCallsCoordinatorWithSelectAction() async {
+    let movie_0: Movie = .init(id: "someId", image: "someImage", title: "someTitle")
+    let movieWithRatings_0: MovieWithRatings = .init(movie: movie_0, ratings: nil)
+    
+    await sut.didSelectMovie(movieWithRatings: movieWithRatings_0)
+    XCTAssertEqual(coordinatorMock.didSelectMovieCalls, [movieWithRatings_0])
   }
   
 }

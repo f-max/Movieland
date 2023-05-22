@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Person: Codable {
-  let id: String
-  let name: String
-  let image: String?
-  let descriprion: String?
-  let asCharacter: String?
+  public let id: String
+  public let name: String
+  public let image: String?
+  public let descriprion: String?
+  public let asCharacter: String?
 }

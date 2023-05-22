@@ -27,6 +27,9 @@ private extension Eustace_inPackage.Container {
     register(serviceType: (any SearchMovieCoordinating).self) {
       SearchMovieCoordinator()
     }
+    register(serviceType: (any MovieDetailCoordinating).self) {
+      MovieDetailCoordinator()
+    }
   }
 }
 
@@ -55,6 +58,11 @@ private extension Eustace_inPackage.Container {
       let movie_1: Movie = .init(id: "someId1", image: "someImage", title: "Some title 1")
       service.fetchMovieListValueToReturn = .success([movie_0, movie_1])
       
+      return service
+    }
+    
+    register(serviceType: MovieDetailServicing.self) {
+      let service = BEServiceProviderMock()
       return service
     }
     
@@ -99,6 +107,13 @@ private extension Eustace_inPackage.Container {
     }
     
     register(serviceType: SearchMovieServicing.self) { [weak self] in
+      guard let urlBuilder = try? self?.resolve(serviceType: URLBuilding.self) else {
+        return nil
+      }
+      return BEServiceProvider(urlBuilder: urlBuilder)
+    }
+    
+    register(serviceType: MovieDetailServicing.self) { [weak self] in
       guard let urlBuilder = try? self?.resolve(serviceType: URLBuilding.self) else {
         return nil
       }

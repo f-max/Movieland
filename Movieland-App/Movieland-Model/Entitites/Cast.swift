@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Cast: Codable {
-  let actorList: [Person]
-  let directorList: [Person]
-  let writerList: [Person]
+  public let actorList: [Person]
+  public let directorList: [Person]
+  public let writerList: [Person]
   
   public init(actorList: [Person], directorList: [Person], writerList: [Person]) {
     self.actorList = actorList

@@ -8,12 +8,12 @@
 import Foundation
 
 public struct MovieWithDetails: Codable {
-  let fullCast: Cast
-  let movie: Movie
-  let plot: String
-  let ratings: Ratings
-  let starList: [Person]
-  let year: String
+  public let fullCast: Cast
+  public let movie: Movie
+  public let plot: String
+  public let ratings: Ratings
+  public let starList: [Person]
+  public let year: String
   
   public init(fullCast: Cast, movie: Movie, plot: String, ratings: Ratings, starList: [Person], year: String) {
     self.fullCast = fullCast

@@ -8,7 +8,6 @@
 import Foundation
 import Movieland_Model
 
-
 protocol SearchMovieModeling {
   var service: SearchMovieServicing { get }
 }

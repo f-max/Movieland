@@ -11,11 +11,16 @@ import UIKit
 import Movieland_Model
 import Movieland_SharedMocks
 
-final class SearchMoviewCoordinatorMock: SearchMovieCoordinating {
+final class SearchMovieCoordinatorMock: SearchMovieCoordinating {
   
   func setRootViewController(window: UIWindow) {
     
   }
   
   func navigateTo(location: LocationMock, completion: (()->Void)?) {}
+  
+  var didSelectMovieCalls: [MovieWithRatings] = .init()
+  func didSelectMovie(movieWithRatings: MovieWithRatings) {
+    didSelectMovieCalls.append(movieWithRatings)
+  }
 }

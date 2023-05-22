@@ -5,11 +5,11 @@
 //  Created by Massimiliano Faustini on 21/05/23.
 //
 
-import Foundation
+import UIKit
 
 protocol Navigating {
   associatedtype L: Location
-  func navigateTo(location: L, completion: (()->Void)?)
+  func navigateTo(location: L, completion: (()->Void)?) async
 }
 
 protocol Location {}
