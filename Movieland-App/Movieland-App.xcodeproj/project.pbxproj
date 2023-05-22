@@ -247,6 +247,7 @@
 		B4F133272A1ADA8700A2142A /* MovieDetailServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailServicing.swift; sourceTree = "<group>"; };
 		B4F133352A1AE58A00A2142A /* MovieDetailCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailCoordinating.swift; sourceTree = "<group>"; };
 		B4F133372A1AE5B900A2142A /* MovieDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailCoordinator.swift; sourceTree = "<group>"; };
+		B4F133392A1B073500A2142A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +347,7 @@
 		B4C414D32A16129800FCD50C = {
 			isa = PBXGroup;
 			children = (
+				B4F133392A1B073500A2142A /* README.md */,
 				B4C414DE2A16129800FCD50C /* Movieland-App */,
 				B47EBD242A1A6ED900C527BC /* Movieland-App-Unit-Tests */,
 				B4C414FF2A16129900FCD50C /* Movieland-App-UI-Tests */,
