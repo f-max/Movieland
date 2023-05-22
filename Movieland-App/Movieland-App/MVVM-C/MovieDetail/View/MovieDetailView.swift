@@ -21,42 +21,20 @@ struct MovieDetailView<ViewModel: MovieDetailViewModeling & ObservableObject>: V
       ErrorView(viewModel: viewModel)
     } else {
       VStack(alignment: .leading) {
-        VStack (alignment:.center){
-          Text(viewModel.movieWithRatings.movie.title)
-            .font(.largeTitle)
-            .padding()
-        }
+        TitleSection(viewModel: viewModel)
         Spacer()
           .frame(height: 20)
-        HStack(alignment: .top) {
-          KFImage(URL(string: viewModel.movieWithRatings.movie.image))
-            .downsampling(size: .init(width: 150, height: 200))
-          Spacer()
-            .frame(width: 20)
-          VStack(alignment: .leading) {
-            Text(viewModel.director)
-              .frame(maxWidth: .infinity, maxHeight: 50, alignment: .topLeading)
-            Divider()
-            Spacer()
-              .frame(height: 8)
-            Text(viewModel.stars)
-              .frame(maxWidth: .infinity, maxHeight: 150, alignment: .topLeading)
-          }
-        }
-        .padding()
-
+        PosterAndCastSection(viewModel: viewModel)
         Spacer()
           .frame(height: 20)
         Divider()
-        Text(viewModel.plot)
-          .italic()
-          .padding()
+        PlotSection(viewModel: viewModel)
         Spacer()
       }
     }
   }
-  
 }
+
 
 private extension MovieDetailView {
   struct ErrorView: View {
@@ -81,6 +59,79 @@ private extension MovieDetailView {
           },
           message: { Text(viewModel.errorMessage)}
         )
+    }
+  }
+}
+
+private extension MovieDetailView {
+  struct PosterAndCastSection: View {
+    @ObservedObject private var viewModel: ViewModel
+    
+    init(viewModel: ViewModel) {
+      self.viewModel = viewModel
+    }
+    var body: some View {
+      HStack(alignment: .top) {
+        KFImage(URL(string: viewModel.movieWithRatings.movie.image))
+          .downsampling(size: .init(width: 150, height: 200))
+        Spacer()
+          .frame(width: 20)
+        CastSection(viewModel: viewModel)
+      }
+      .padding()
+    }
+  }
+}
+
+private extension MovieDetailView {
+  struct CastSection: View {
+    @ObservedObject private var viewModel: ViewModel
+    
+    init(viewModel: ViewModel) {
+      self.viewModel = viewModel
+    }
+    var body: some View {
+      VStack(alignment: .leading) {
+        Text(viewModel.director)
+          .frame(maxWidth: .infinity, maxHeight: 50, alignment: .topLeading)
+        Divider()
+        Spacer()
+          .frame(height: 8)
+        Text(viewModel.stars)
+          .frame(maxWidth: .infinity, maxHeight: 150, alignment: .topLeading)
+      }
+    }
+  }
+}
+
+private extension MovieDetailView {
+  struct TitleSection: View {
+    @ObservedObject private var viewModel: ViewModel
+    
+    init(viewModel: ViewModel) {
+      self.viewModel = viewModel
+    }
+    var body: some View {
+      VStack (alignment:.center){
+        Text(viewModel.movieWithRatings.movie.title)
+          .font(.largeTitle)
+          .padding()
+      }
+    }
+  }
+}
+
+private extension MovieDetailView {
+  struct PlotSection: View {
+    @ObservedObject private var viewModel: ViewModel
+    
+    init(viewModel: ViewModel) {
+      self.viewModel = viewModel
+    }
+    var body: some View {
+      Text(viewModel.plot)
+        .italic()
+        .padding()
     }
   }
 }
